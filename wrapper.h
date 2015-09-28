@@ -6,7 +6,7 @@
 #include <cassert>
 #include <sstream>
 
-class P2 {
+class Wrapper {
 public:
     static void PR_init(std::stringstream& ss, int seed, int num_equities, int num_clients, int num_orders, int arrival_rate);
     // static std::stringstream PRstream(int seed, int num_equities, int num_clients, int num_orders, int arrival_rate);
