@@ -1,8 +1,8 @@
 #include "wrapper.h"
 
-void P2::PR_init(std::stringstream& ss, int seed, int num_equities, int num_clients, int num_orders, int arrival_rate)
+void Wrapper::PR_init(std::stringstream& ss, int seed, int num_equities, int num_clients, int num_orders, int arrival_rate)
 {
-    P2::MersenneTwister mt;
+    Wrapper::MersenneTwister mt;
     int max_price = 100, max_quantity = 50;
     mt.init_genrand(seed);
     long double timestamp = 0;
@@ -71,7 +71,7 @@ void P2::PR_init(std::stringstream& ss, int seed, int num_equities, int num_clie
 /**
  * Constructor
  */
-P2::MersenneTwister::MersenneTwister(void):
+Wrapper::MersenneTwister::MersenneTwister(void):
 mt_(new unsigned long[N]), mti_(N+1),
 init_key_(NULL), key_length_(0), s_(0),
 seeded_by_array_(false), seeded_by_int_(false)
@@ -82,7 +82,7 @@ seeded_by_array_(false), seeded_by_int_(false)
 /**
  * Destructor
  */
-P2::MersenneTwister::~MersenneTwister(void)
+Wrapper::MersenneTwister::~MersenneTwister(void)
 {
     assert(mt_ != NULL);
     delete[] mt_;
@@ -94,7 +94,7 @@ P2::MersenneTwister::~MersenneTwister(void)
  *
  * \param s seed
  */
-void P2::MersenneTwister::init_genrand(unsigned long s)
+void Wrapper::MersenneTwister::init_genrand(unsigned long s)
 {
     mt_[0]= s & 0xffffffffUL;
     for (mti_=1; mti_<N; mti_++) {
@@ -118,7 +118,7 @@ void P2::MersenneTwister::init_genrand(unsigned long s)
  *
  * \return random number on [0, 0xffffffff]
  */
-unsigned long P2::MersenneTwister::genrand_int32(void)
+unsigned long Wrapper::MersenneTwister::genrand_int32(void)
 {
     unsigned long y;
     static unsigned long mag01[2]={0x0UL, MATRIX_A};
