@@ -1,7 +1,7 @@
 #include <algorithm>
 #include "stock.h"
 #include <getopt.h>
-#include "P2.h"
+#include "wrapper.h"
 using namespace std;
 
 int main(int argc, char** argv) {
