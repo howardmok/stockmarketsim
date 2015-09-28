@@ -1,5 +1,5 @@
-#ifndef P2_H
-#define P2_H
+#ifndef WRAPPER_H
+#define WRAPPER_H
 
 #include <vector>
 #include <string>
