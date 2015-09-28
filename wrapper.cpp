@@ -1,4 +1,4 @@
-#include "P2.h"
+#include "wrapper.h"
 
 void P2::PR_init(std::stringstream& ss, int seed, int num_equities, int num_clients, int num_orders, int arrival_rate)
 {
